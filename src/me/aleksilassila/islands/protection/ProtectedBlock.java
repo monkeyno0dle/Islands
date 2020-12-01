@@ -14,6 +14,11 @@ public class ProtectedBlock {
         this.islandId = islandId;
         this.ownerUUID = islandsConfig.getString(islandId + ".UUID", null);
     }
+    
+        public ProtectedBlock(int x, int z) {
+        this(IslandsConfig.getIslandId(x, z));
+    }
+
 
     public boolean canDoAnything(String uuid) {
         if (uuid.equalsIgnoreCase(ownerUUID)) return true;
